@@ -1,5 +1,5 @@
-import instrument.Guitar;
-import instrument.InstrumentType;
+import item.instrument.Guitar;
+import item.instrument.InstrumentType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +12,8 @@ public class GuitarTest {
 
     @Before
     public void before(){
-        guitar = new Guitar("Black", InstrumentType.STRING, "Martin 000-28", "Mahogany Blocks", "Hardwood", "Chrome tuning machine", 6);
+        guitar = new Guitar(600.00,"Guitar","Black", InstrumentType.STRING, "Martin 000-28", "Mahogany Blocks", "Hardwood", "Chrome tuning machine", 6);
+        guitar.setRetailPrice(700.00);
     }
 
     @Test
@@ -54,6 +55,26 @@ public class GuitarTest {
     @Test
     public void guitarHasColour(){
         assertEquals("Black", guitar.getColour());
+    }
+
+    @Test
+    public void guitarHasItemDescription(){
+        assertEquals("Guitar", guitar.getItemDescription());
+    }
+
+    @Test
+    public void guitarHasWholesalePrice(){
+        assertEquals(600.00, guitar.getWholesalePrice(),00.00);
+    }
+
+    @Test
+    public void guitarHasRetailPrice(){
+        assertEquals(700.00, guitar.getRetailPrice(),00.00);
+    }
+
+    @Test
+    public void canCalculateMarkupOnGuitar(){
+        assertEquals(100.00, guitar.calculateMarkup(), 0.00);
     }
 
 

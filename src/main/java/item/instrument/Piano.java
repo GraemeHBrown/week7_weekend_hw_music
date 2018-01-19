@@ -1,4 +1,4 @@
-package instrument;
+package item.instrument;
 
 public class Piano extends Instrument {
 
@@ -6,8 +6,8 @@ public class Piano extends Instrument {
     private int numberOfKeys;
     private String pedalType;
 
-    public Piano(String colour,InstrumentType type, int numberOfKeys, String pedalType){
-        super(colour, type);
+    public Piano(double wholeSalePrice, String itemDescription, String colour,InstrumentType type, int numberOfKeys, String pedalType){
+        super(wholeSalePrice, itemDescription,colour, type);
         this.numberOfKeys = numberOfKeys;
         this.pedalType = pedalType;
     }

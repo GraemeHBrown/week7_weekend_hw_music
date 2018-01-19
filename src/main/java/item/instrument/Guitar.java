@@ -1,4 +1,4 @@
-package instrument;
+package item.instrument;
 
 public class Guitar extends Instrument {
 
@@ -8,8 +8,8 @@ public class Guitar extends Instrument {
     private String hardware;
     private int numberOfStrings;
 
-    public Guitar(String colour, InstrumentType type, String model, String bodyType, String neckType, String hardware, int numberOfStrings) {
-        super(colour, type);
+    public Guitar(double wholesalePrice,String itemDescription, String colour, InstrumentType type, String model, String bodyType, String neckType, String hardware, int numberOfStrings) {
+        super(wholesalePrice,itemDescription, colour, type);
         this.model = model;
         this.bodyType = bodyType;
         this.neckType = neckType;
