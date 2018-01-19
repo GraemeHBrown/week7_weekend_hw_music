@@ -2,6 +2,8 @@ import org.junit.Before;
 import org.junit.Test;
 import shop.Shop;
 import shop.item.ISell;
+import shop.item.accessories.AccessoryType;
+import shop.item.accessories.GuitarString;
 import shop.item.instrument.Guitar;
 import shop.item.instrument.InstrumentType;
 
@@ -12,11 +14,16 @@ public class ShopTest {
 
     Shop shop;
     ISell item;
+    ISell item2;
 
     @Before
     public void before(){
         shop = new Shop();
+        item2 = new GuitarString("Guitar strings", 6.00, AccessoryType.GUITAR_STRINGS, 6,"9-42");
         item = new Guitar(600.00,"Guitar","Black", InstrumentType.STRING, "Martin 000-28", "Mahogany Blocks", "Hardwood", "Chrome tuning machine", 6);
+        ((GuitarString) item2).setRetailPrice(8.00);
+        ((Guitar) item).setRetailPrice(800.00);
+
     }
 
     @Test
@@ -37,5 +44,15 @@ public class ShopTest {
         int countBeforeRemove = shop.stockCount();
         shop.removeItemFromStock(item);
         assertEquals(countBeforeRemove-1, shop.stockCount());
+    }
+
+    @Test
+    public void canCalculateTotalPotentialProfitFromStockList(){
+        shop.addItemToStock(item);
+        shop.addItemToStock(item2);
+        double itemProfit = item.calculateMarkup();
+        double item2Profit = item2.calculateMarkup();
+        double totalProfit = shop.calculateTotalPotentialProfit();
+        assertEquals(itemProfit+item2Profit, totalProfit, 0.00);
     }
 }
