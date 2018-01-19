@@ -1,4 +1,4 @@
-package item.accessories;
+package shop.item.accessories;
 
 public class GuitarString extends Accessory {
     private int numberInPacket;

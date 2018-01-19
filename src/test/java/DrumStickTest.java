@@ -1,4 +1,4 @@
-import item.accessories.Drumstick;
+import shop.item.accessories.Drumstick;
 import org.junit.Before;
 import org.junit.Test;
 

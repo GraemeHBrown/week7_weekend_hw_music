@@ -1,4 +1,4 @@
-package item.accessories;
+package shop.item.accessories;
 
 public class Drumstick extends Accessory {
 

@@ -1,5 +1,5 @@
-import item.instrument.InstrumentType;
-import item.instrument.Piano;
+import shop.item.instrument.InstrumentType;
+import shop.item.instrument.Piano;
 import org.junit.Before;
 import org.junit.Test;
 

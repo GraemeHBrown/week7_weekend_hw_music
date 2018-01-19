@@ -1,6 +1,6 @@
-package item.instrument;
+package shop.item.instrument;
 
-import item.Item;
+import shop.item.Item;
 
 public abstract class Instrument extends Item implements IPlayable {
 

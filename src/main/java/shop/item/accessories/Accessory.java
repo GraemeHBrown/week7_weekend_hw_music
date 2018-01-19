@@ -1,6 +1,6 @@
-package item.accessories;
+package shop.item.accessories;
 
-import item.Item;
+import shop.item.Item;
 
 public abstract class Accessory extends Item {
 

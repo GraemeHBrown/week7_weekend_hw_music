@@ -1,4 +1,4 @@
-import item.accessories.GuitarString;
+import shop.item.accessories.GuitarString;
 import org.junit.Before;
 import org.junit.Test;
 

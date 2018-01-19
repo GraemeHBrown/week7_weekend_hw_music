@@ -1,4 +1,4 @@
-package item;
+package shop.item;
 
 import java.text.DecimalFormat;
 

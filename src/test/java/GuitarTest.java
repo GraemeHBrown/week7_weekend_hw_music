@@ -1,5 +1,5 @@
-import item.instrument.Guitar;
-import item.instrument.InstrumentType;
+import shop.item.instrument.Guitar;
+import shop.item.instrument.InstrumentType;
 import org.junit.Before;
 import org.junit.Test;
 
