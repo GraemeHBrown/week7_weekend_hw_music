@@ -1,3 +1,4 @@
+import shop.item.accessories.AccessoryType;
 import shop.item.accessories.GuitarString;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +11,7 @@ public class GuitarStringTest {
 
     @Before
     public void before(){
-        guitarString = new GuitarString("Guitar strings", 6.00, "Guitar strings", 6,"9-42");
+        guitarString = new GuitarString("Guitar strings", 6.00, AccessoryType.GUITAR_STRINGS, 6,"9-42");
         guitarString.setRetailPrice(8.00);
     }
 
@@ -26,7 +27,7 @@ public class GuitarStringTest {
 
     @Test
     public void guitarStringHasAccessoryType(){
-        assertEquals("Guitar strings", guitarString.getAccessoryType());
+        assertEquals(AccessoryType.GUITAR_STRINGS, guitarString.getAccessoryType());
     }
 
     @Test

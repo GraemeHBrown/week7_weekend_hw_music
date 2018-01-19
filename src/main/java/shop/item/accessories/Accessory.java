@@ -4,17 +4,17 @@ import shop.item.Item;
 
 public abstract class Accessory extends Item {
 
-    private String accessoryType;
+    private AccessoryType accessoryType;
 
-    public Accessory(String itemDescription, double wholesalePrice, String accessoryType) {
+    public Accessory(String itemDescription, double wholesalePrice, AccessoryType accessoryType) {
         super(itemDescription, wholesalePrice);
         this.accessoryType = accessoryType;
     }
 
 
-    public String getAccessoryType() {
+    public AccessoryType getAccessoryType() {
         return this.accessoryType;
     }
 }
 
-//TODO turn accessoryType into ENUM
+

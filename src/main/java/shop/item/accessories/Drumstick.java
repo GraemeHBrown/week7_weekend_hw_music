@@ -5,7 +5,7 @@ public class Drumstick extends Accessory {
     private String woodType;
     private String tipMaterial;
 
-    public Drumstick(String itemDescription, double wholesalePrice, String accessoryType, String woodType, String tipMaterial) {
+    public Drumstick(String itemDescription, double wholesalePrice, AccessoryType accessoryType, String woodType, String tipMaterial) {
         super(itemDescription, wholesalePrice, accessoryType);
         this.woodType = woodType;
         this.tipMaterial = tipMaterial;

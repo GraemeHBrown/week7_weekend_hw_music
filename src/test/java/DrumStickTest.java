@@ -1,3 +1,4 @@
+import shop.item.accessories.AccessoryType;
 import shop.item.accessories.Drumstick;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +11,7 @@ public class DrumStickTest {
 
     @Before
     public void before(){
-        drumStick = new Drumstick("Drum sticks", 12.00, "Drum sticks", "Hickory", "wood");
+        drumStick = new Drumstick("Drum sticks", 12.00, AccessoryType.DRUMMING_ACCESSORIES, "Hickory", "wood");
         drumStick.setRetailPrice(14.00);
     }
 
@@ -26,7 +27,7 @@ public class DrumStickTest {
 
     @Test
     public void drumStickHasAccessoryType(){
-        assertEquals("Drum sticks", drumStick.getAccessoryType());
+        assertEquals(AccessoryType.DRUMMING_ACCESSORIES, drumStick.getAccessoryType());
     }
 
     @Test

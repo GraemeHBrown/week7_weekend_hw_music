@@ -4,7 +4,7 @@ public class GuitarString extends Accessory {
     private int numberInPacket;
     private String guageRange;
 
-    public GuitarString(String itemDescription, double wholesalePrice, String accessoryType, int numberInPacket, String guageRange) {
+    public GuitarString(String itemDescription, double wholesalePrice, AccessoryType accessoryType, int numberInPacket, String guageRange) {
         super(itemDescription, wholesalePrice, accessoryType);
         this.numberInPacket = numberInPacket;
         this.guageRange = guageRange;

@@ -1,0 +1,5 @@
+package shop.item.accessories;
+
+public enum AccessoryType {
+    GUITAR_STRINGS, DRUMMING_ACCESSORIES, AMPS_AND_EFFECTS, TECHNOLOGY_AND_RECORDING, KEYBOARD_ACCESSORIES
+}
