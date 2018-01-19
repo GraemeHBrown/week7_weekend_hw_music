@@ -1,3 +1,4 @@
+import instrument.InstrumentType;
 import instrument.Piano;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,12 +11,12 @@ public class PianoTest {
 
     @Before
     public void before(){
-        piano = new Piano(88, "Damper silencing stop");
+        piano = new Piano("Black", InstrumentType.KEYBOARD,88, "Damper silencing stop");
     }
 
     @Test
     public void pianoCanPlay(){
-        assertEquals("instrument.Piano playing", piano.play());
+        assertEquals("Piano playing", piano.play());
     }
 
     @Test

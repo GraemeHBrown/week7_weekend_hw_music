@@ -1,6 +1,6 @@
 package instrument;
 
-public class Guitar implements IPlayable {
+public class Guitar extends Instrument {
 
     private String model;
     private String bodyType;
@@ -8,7 +8,8 @@ public class Guitar implements IPlayable {
     private String hardware;
     private int numberOfStrings;
 
-    public Guitar(String model, String bodyType, String neckType, String hardware, int numberOfStrings) {
+    public Guitar(String colour, InstrumentType type, String model, String bodyType, String neckType, String hardware, int numberOfStrings) {
+        super(colour, type);
         this.model = model;
         this.bodyType = bodyType;
         this.neckType = neckType;
@@ -18,7 +19,7 @@ public class Guitar implements IPlayable {
 
     @Override
     public String play() {
-        return "instrument.Guitar playing";
+        return "Guitar playing";
     }
 
     public String getModel() {
