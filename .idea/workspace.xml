@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4ba6873-8959-439d-93f0-21e8b4c8d1ac" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/instrument/Piano.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/classes/instrument/Guitar.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/classes/instrument/IPlayable.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/classes/instrument/Piano.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/test/classes/GuitarTest.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/test/classes/PianoTest.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/instrument/Guitar.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/instrument/IPlayable.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Guitar.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/IPlayable.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GuitarTest.java" afterPath="$PROJECT_DIR$/src/test/java/GuitarTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PianoTest.java" afterPath="$PROJECT_DIR$/src/test/java/PianoTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -40,7 +41,7 @@
       <file leaf-file-name="Guitar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/instrument/Guitar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
+            <state relative-caret-position="-7">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding>
                 <element signature="e#542#543#0" expanded="true" />
@@ -756,7 +757,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516362853889</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Created Piano class that implements IPlayable.  It has various specific properties for Piano and getters for these.">
+      <created>1516368279441</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1516368279441</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -830,7 +838,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created IPlayable interface with play method.  Created Guitar class that implements IPlayable." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created IPlayable interface with play method.  Created Guitar class that implements IPlayable." />
+    <MESSAGE value="Created Piano class that implements IPlayable.  It has various specific properties for Piano and getters for these." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Piano class that implements IPlayable.  It has various specific properties for Piano and getters for these." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -904,7 +913,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/instrument/Guitar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="-7">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding>
             <element signature="e#542#543#0" expanded="true" />
