@@ -1,5 +1,5 @@
+import instrument.Guitar;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -16,7 +16,7 @@ public class GuitarTest {
 
     @Test
     public void guitarCanPlay(){
-        assertEquals("Guitar playing", guitar.play());
+        assertEquals("instrument.Guitar playing", guitar.play());
     }
 
 
