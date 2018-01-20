@@ -3,7 +3,6 @@ package shop;
 import shop.item.ISell;
 import shop.item.Item;
 import shop.item.accessories.Accessory;
-import shop.item.instrument.IPlayable;
 import shop.item.instrument.Instrument;
 
 import java.util.ArrayList;
@@ -13,10 +12,11 @@ import static java.util.stream.Collectors.toList;
 
 public class Shop {
     private ArrayList<ISell> stock;
-    private ArrayList<Item> stockItems;
+    private ArrayList<ISell> soldItems;
 
     public Shop() {
         this.stock = new ArrayList<>();
+        this.soldItems = new ArrayList<>();
     }
 
     public ArrayList<ISell> getStock() {
@@ -54,11 +54,19 @@ public class Shop {
         Item foundType = item.getItemTypeInformation();
 
         if(foundType.getClass().getSuperclass().getSimpleName().equals("Accessory")){
-            foundType = ((Accessory) foundType);
+            return ((Accessory) foundType);
         } else {
-            foundType = ((Instrument) foundType);
-        };
-       return foundType;
+            return ((Instrument) foundType);
+        }
+
     }
 
+    public void sellItem(ISell item) {
+        removeItemFromStock(item);
+        addToSoldItems(item);
+    }
+
+    private void addToSoldItems(ISell item) {
+        soldItems.add(item);
+    }
 }

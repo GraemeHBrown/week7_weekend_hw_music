@@ -86,4 +86,14 @@ public class ShopTest {
         Instrument foundItemType = (Instrument) shop.getItemType(items.get(0));
         assertEquals(InstrumentType.STRING,foundItemType.getType());
     }
+
+    @Test
+    public void shopCanSellItem(){
+        shop.addItemToStock(item);
+        shop.addItemToStock(item2);
+        int stockCountBeforeSale = shop.stockCount();
+        shop.sellItem(item);
+        assertEquals(stockCountBeforeSale-1, shop.stockCount());
+
+    }
 }
