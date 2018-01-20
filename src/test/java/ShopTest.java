@@ -2,10 +2,14 @@ import org.junit.Before;
 import org.junit.Test;
 import shop.Shop;
 import shop.item.ISell;
+import shop.item.Item;
 import shop.item.accessories.AccessoryType;
+import shop.item.accessories.Drumstick;
 import shop.item.accessories.GuitarString;
 import shop.item.instrument.Guitar;
 import shop.item.instrument.InstrumentType;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -15,11 +19,13 @@ public class ShopTest {
     Shop shop;
     ISell item;
     ISell item2;
+    ISell item3;
 
     @Before
     public void before(){
         shop = new Shop();
         item2 = new GuitarString("Guitar strings", 6.00, AccessoryType.GUITAR_STRINGS, 6,"9-42");
+        item3 = new Drumstick("Drum sticks", 12.00, AccessoryType.DRUMMING_ACCESSORIES, "Hickory", "wood");
         item = new Guitar(600.00,"Guitar","Black", InstrumentType.STRING, "Martin 000-28", "Mahogany Blocks", "Hardwood", "Chrome tuning machine", 6);
         ((GuitarString) item2).setRetailPrice(8.00);
         ((Guitar) item).setRetailPrice(800.00);
@@ -47,12 +53,19 @@ public class ShopTest {
     }
 
     @Test
-    public void canCalculateTotalPotentialProfitFromStockList(){
+    public void canCalculateTotalPotentialProfitFromStockList() throws NoSuchMethodException {
         shop.addItemToStock(item);
         shop.addItemToStock(item2);
         double itemProfit = item.calculateMarkup();
         double item2Profit = item2.calculateMarkup();
         double totalProfit = shop.calculateTotalPotentialProfit();
         assertEquals(itemProfit+item2Profit, totalProfit, 0.00);
+    }
+
+    @Test
+    public void canGetItemDetailsFromStockList(){
+        shop.addItemToStock(item2);
+        ArrayList<Item> items = shop.getStockItems();
+        assertEquals("Guitar strings", items.get(0).getItemDescription());
     }
 }
