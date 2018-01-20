@@ -20,4 +20,8 @@ public abstract class Instrument extends Item implements IPlayable {
     public String getColour() {
         return colour;
     }
+
+    public Instrument getItemTypeInformation(){
+        return this;
+    }
 }

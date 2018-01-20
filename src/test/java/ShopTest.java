@@ -3,10 +3,12 @@ import org.junit.Test;
 import shop.Shop;
 import shop.item.ISell;
 import shop.item.Item;
+import shop.item.accessories.Accessory;
 import shop.item.accessories.AccessoryType;
 import shop.item.accessories.Drumstick;
 import shop.item.accessories.GuitarString;
 import shop.item.instrument.Guitar;
+import shop.item.instrument.Instrument;
 import shop.item.instrument.InstrumentType;
 
 import java.util.ArrayList;
@@ -53,7 +55,7 @@ public class ShopTest {
     }
 
     @Test
-    public void canCalculateTotalPotentialProfitFromStockList() throws NoSuchMethodException {
+    public void canCalculateTotalPotentialProfitFromStockList() {
         shop.addItemToStock(item);
         shop.addItemToStock(item2);
         double itemProfit = item.calculateMarkup();
@@ -67,5 +69,21 @@ public class ShopTest {
         shop.addItemToStock(item2);
         ArrayList<Item> items = shop.getStockItems();
         assertEquals("Guitar strings", items.get(0).getItemDescription());
+    }
+
+    @Test
+    public void canGetItemCategoryDetailsFromStockItemWhichIsAnAccessory(){
+        shop.addItemToStock(item2);
+        ArrayList<Item> items = shop.getStockItems();
+        Accessory foundItemType = (Accessory) shop.getItemType(items.get(0));
+        assertEquals(AccessoryType.GUITAR_STRINGS,foundItemType.getAccessoryType());
+    }
+
+    @Test
+    public void canGetItemCategoryDetailsFromStockItemWhichIsAnInstrument(){
+        shop.addItemToStock(item);
+        ArrayList<Item> items = shop.getStockItems();
+        Instrument foundItemType = (Instrument) shop.getItemType(items.get(0));
+        assertEquals(InstrumentType.STRING,foundItemType.getType());
     }
 }

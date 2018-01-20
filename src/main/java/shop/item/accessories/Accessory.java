@@ -15,6 +15,10 @@ public abstract class Accessory extends Item {
     public AccessoryType getAccessoryType() {
         return this.accessoryType;
     }
+
+    public Accessory getItemTypeInformation(){
+        return this;
+    }
 }
 
 

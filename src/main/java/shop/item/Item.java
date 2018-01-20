@@ -35,4 +35,6 @@ public abstract class Item implements ISell {
     public void setRetailPrice(double retailPrice) {
         this.retailPrice = retailPrice;
     }
+
+    public abstract Item getItemTypeInformation();
 }
