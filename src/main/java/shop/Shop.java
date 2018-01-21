@@ -7,6 +7,9 @@ import shop.item.instrument.Instrument;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -58,6 +61,13 @@ public class Shop {
         return (ArrayList<Item>) items;
     }
 
+    public ArrayList<Item> getSoldItems() {
+        List<Item> items = soldItems.stream()
+                .map(Item.class::cast)
+                .collect(toList());
+        return (ArrayList<Item>) items;
+    }
+
     public Item getItemType(Item item) {
         Item foundType = item.getItemTypeInformation();
 
@@ -80,6 +90,17 @@ public class Shop {
 
     public int soldItemsCount() {
         return this.soldItems.size();
+    }
+
+    public Map<String, Long> createCountOfSoldItemsByType() {
+        ArrayList<String> itemsList = new ArrayList<>();
+        ArrayList<Item> soldItems = getSoldItems();
+        for (Item item : soldItems) {
+            itemsList.add(item.getItemDescription());
+        }
+        Map<String, Long> soldCountMap = itemsList.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        return soldCountMap;
     }
 
 

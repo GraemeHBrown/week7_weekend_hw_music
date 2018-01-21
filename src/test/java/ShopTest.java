@@ -12,6 +12,7 @@ import shop.item.instrument.Instrument;
 import shop.item.instrument.InstrumentType;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -113,5 +114,26 @@ public class ShopTest {
         double itemActualProfit = item.calculateActualProfit();
         double totalActualProfit = shop.calculateTotalActualProfitFromSoldItems();
         assertEquals(itemActualProfit,totalActualProfit, 0.00);
+    }
+
+    @Test
+    public void canCountTheNumberOfSoldItems(){
+        shop.addItemToStock(item);
+        int soldItemCountBeforeSale = shop.soldItemsCount();
+        shop.sellItem(item);
+        assertEquals(soldItemCountBeforeSale+1, shop.soldItemsCount());
+
+    }
+
+    @Test
+    public void canDisplayTheCountOfItemsSoldByType(){
+        shop.addItemToStock(item);
+        shop.addItemToStock(item2);
+        shop.addItemToStock(item3);
+        shop.sellItem(item);
+        shop.sellItem(item2);
+        shop.sellItem(item3);
+        Map countByType = shop.createCountOfSoldItemsByType();
+        assertEquals(1L, countByType.get("Guitar strings"));
     }
 }
