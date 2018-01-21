@@ -43,6 +43,14 @@ public class Shop {
         return potentialProfit;
     }
 
+    public double calculateTotalActualProfitFromSoldItems() {
+        double actualProfit = 0;
+        for(ISell item: soldItems){
+            actualProfit += item.calculateActualProfit();
+        }
+        return actualProfit;
+    }
+
     public ArrayList<Item> getStockItems() {
         List<Item> items = stock.stream()
                 .map(Item.class::cast)
@@ -69,4 +77,10 @@ public class Shop {
     private void addToSoldItems(ISell item) {
         soldItems.add(item);
     }
+
+    public int soldItemsCount() {
+        return this.soldItems.size();
+    }
+
+
 }

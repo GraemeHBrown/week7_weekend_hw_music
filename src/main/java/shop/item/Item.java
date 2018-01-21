@@ -8,7 +8,7 @@ public abstract class Item implements ISell {
     private double wholesalePrice;
     private double retailPrice;
 
-    public Item(String itemDescription, double wholesalePrice){
+    public Item(String itemDescription, double wholesalePrice) {
         this.itemDescription = itemDescription;
         this.wholesalePrice = wholesalePrice;
     }
@@ -18,6 +18,13 @@ public abstract class Item implements ISell {
         DecimalFormat format = new DecimalFormat("#.##");
         double markup = this.retailPrice - this.wholesalePrice;
         return Double.parseDouble(format.format(markup));
+    }
+
+    @Override
+    public double calculateActualProfit() {
+        DecimalFormat format = new DecimalFormat("#.##");
+        double profit = this.retailPrice - this.wholesalePrice;
+        return Double.parseDouble(format.format(profit));
     }
 
     public String getItemDescription() {
